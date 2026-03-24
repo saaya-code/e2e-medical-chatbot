@@ -7,7 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from src.helper import get_or_create_vectorstore
 from src.prompt import system_prompt
-
+import logging
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -44,6 +44,7 @@ def chat():
     if not msg:
         return "Message cannot be empty.", 400
     response = rag_chain.invoke({"input": msg})
+    logging.info(response)
     return str(response["answer"])
 
 
