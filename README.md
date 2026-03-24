@@ -37,8 +37,28 @@ Or download the ZIP from GitHub and extract it, then open a terminal inside the 
 
 This keeps the project's dependencies isolated from the rest of your computer.
 
+The project requires **Python 3.10.3** specifically. Make sure you're using that version when creating the environment.
+
+**Check your Python version first:**
+```bash
+python --version
+```
+
+If it shows `Python 3.10.x`, run:
 ```bash
 python -m venv .venv
+```
+
+If you have multiple Python versions installed and the above shows a different version, use the full path to Python 3.10 instead. For example:
+
+**On Windows:**
+```bash
+py -3.10 -m venv .venv
+```
+
+**On Mac/Linux:**
+```bash
+python3.10 -m venv .venv
 ```
 
 Then activate it:
